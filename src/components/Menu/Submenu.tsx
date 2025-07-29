@@ -9,7 +9,7 @@ interface SubmenuProps {
     menuDto: MenuDTO;
 }
 
-const Submenu: React.FC<SubmenuProps> = ({ open = false, setOpen, menuDto }) => {
+const Submenu: React.FC<SubmenuProps> = ({ open = true, setOpen, menuDto }) => {
 
     const [shown, setShown] = useState<boolean>(open);
 
