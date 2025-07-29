@@ -1,10 +1,10 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import SideMenu from './SideMenu';
+import SideMenu from './Menu/SideMenu';
 
 
-const ProtectedRoute: React.FC = () => {
+const ProtectedLayout: React.FC = () => {
     const { user } = useAuth();
 
     return !user ? (
@@ -17,4 +17,4 @@ const ProtectedRoute: React.FC = () => {
     )
 };
 
-export default ProtectedRoute;
+export default ProtectedLayout;
