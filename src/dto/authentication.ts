@@ -1,14 +1,12 @@
+import type UserDTO from "./user";
+
 export interface LoginPayloadDTO {
   login: string;
   password: string;
 }
 
 export interface LoginResponseDTO {
-  user: {
-    id: string;
-    name: string;
-    email: string;
-  };
+  user: UserDTO;
   token: string;
 }
 
@@ -19,10 +17,6 @@ export interface RegisterPayload {
 }
 
 export interface ResgisterResponseDTO {
-  user: {
-    id: string;
-    name: string;
-    email: string;
-  };
+  user: UserDTO;
   token: string;
 }

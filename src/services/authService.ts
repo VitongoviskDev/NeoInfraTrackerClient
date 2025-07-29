@@ -1,12 +1,14 @@
-import type { LoginPayloadDTO, LoginResponseDTO, RegisterPayload, ResgisterResponseDTO } from "../dtos/authentication";
+import type { LoginPayloadDTO, LoginResponseDTO, RegisterPayload, ResgisterResponseDTO } from "../dto/authentication";
 import api from "./axios";
 
 export const loginUser = async (userData: LoginPayloadDTO): Promise<LoginResponseDTO> => {
     return {
         user: {
             id: '1',
-            name: 'vitor',
-            email: userData.login
+            name: 'Vitor Campos',
+            email: userData.login,
+            roles: ['ROLE_ADMIN'],
+            profileImage: ''
         },
         token: 'senha:' + userData.password
     }
@@ -18,8 +20,10 @@ export const registerUser = async (userData: RegisterPayload): Promise<Resgister
     return {
         user: {
             id: '1',
-            name: 'vitor',
-            email: userData.login
+            name: 'Vitor Campos',
+            email: userData.login,
+            roles: ['ROLE_ADMIN'],
+            profileImage: ''
         },
         token: 'senha:' + userData.password
     }

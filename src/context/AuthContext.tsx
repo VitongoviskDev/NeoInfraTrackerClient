@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect, type ReactNode } from 'react';
-import type User from '../dto/user';
+
 import { loginUser, registerUser } from '../services/authService';
 import type { LoginPayloadDTO, RegisterPayload } from '../dto/authentication';
+import type UserDTO from '../dto/user';
 
 
 interface AuthContextType {
-    user: User | null;
+    user: UserDTO | null;
     token: string | null;
     login: (loginPayload: LoginPayloadDTO) => Promise<void>;
     logout: () => void;
@@ -15,7 +16,7 @@ interface AuthContextType {
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<UserDTO | null>(null);
     const [token, setToken] = useState<string | null>(null);
 
     useEffect(() => {
@@ -26,7 +27,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const login = async (loginPayload: LoginPayloadDTO) => {
         try {
             const { user, token } = await loginUser(loginPayload);
-            console.log(`AuthContext - LOGIN - User: ${user}\nToken ${token}`)
             setUser(user);
             setToken(token);
             localStorage.setItem('user', JSON.stringify(user));
@@ -46,7 +46,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const register = async (registerPayload: RegisterPayload) => {try {
             const { user, token } = await registerUser(registerPayload);
-            console.log(`AuthContext - REGISTER - User: ${user}\nToken ${token}`)
             setUser(user);
             setToken(token);
             localStorage.setItem('user', JSON.stringify(user));
