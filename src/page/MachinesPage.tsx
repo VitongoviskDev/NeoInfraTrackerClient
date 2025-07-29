@@ -34,23 +34,25 @@ const MachinesPage: React.FC = () => {
         {/* DADOS */}
         <section className='mt-8'>
           <FilterItemsList items={storageLocals} selectedValue={storageLocal} setSelectedValue={setStorageLocal} />
-          {
-            storageLocal === 'Produção' ? (
-              <>Produção</>
-            ) :
-              storageLocal === 'Estoque' ? (
-                <StorageTable />
+          <div className='mt-2'>
+            {
+              storageLocal === 'Produção' ? (
+                <>Produção</>
               ) :
-                storageLocal === 'Manutenção' ? (
-                  <>Manutenção</>
+                storageLocal === 'Estoque' ? (
+                  <StorageTable />
                 ) :
-                  storageLocal === 'Bancada' ? (
-                    <>Bancada</>
+                  storageLocal === 'Manutenção' ? (
+                    <>Manutenção</>
                   ) :
-                    (
-                      <>Descarte</>
-                    )
-          }
+                    storageLocal === 'Bancada' ? (
+                      <>Bancada</>
+                    ) :
+                      (
+                        <>Descarte</>
+                      )
+            }
+          </div>
         </section>
       </main>
     </DefaultPage>

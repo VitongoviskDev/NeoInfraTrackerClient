@@ -3,10 +3,12 @@ import { BsThreeDotsVertical } from 'react-icons/bs'
 import { RiComputerLine } from 'react-icons/ri'
 
 const StorageTable: React.FC = () => {
-    const tableHeaderClass = 'p-2 bg-gray-300';
-    const tableDataClass = '';
+
+    const tableHeaderClass = 'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0';
+    const tableDataClass = 'p-4 align-middle [&:has([role=checkbox])]:pr-0 font-medium';
+
     return (
-        <div className='h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0'>
+        <div className='p-4 ring ring-gray-300 rounded-lg'>
             <div className=''>
                 <div className='flex items-end text-gray-900'>
                     <RiComputerLine className='text-2xl' />
@@ -14,10 +16,10 @@ const StorageTable: React.FC = () => {
                 </div>
                 <p className='text-sm text-gray-600'>Lista de equipamentos mapeados no estoque físico</p>
             </div>
-            <table className=''>
-                <thead className=''>
-                    <tr className=''>
-                        <th className={`${tableHeaderClass}`}>-</th>
+            <table className='w-full caption-bottom text-sm mt-4'>
+                <thead className='[&_tr]:border-b'>
+                    <tr className='border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'>
+                        <th className={`${tableHeaderClass}`}>ID</th>
                         <th className={`${tableHeaderClass}`}>Fabricante</th>
                         <th className={`${tableHeaderClass}`}>Modelo</th>
                         <th className={`${tableHeaderClass}`}>Ativo</th>
@@ -27,21 +29,32 @@ const StorageTable: React.FC = () => {
                         <th className={`${tableHeaderClass}`}>Ações</th>
                     </tr>
                 </thead>
-                <tbody className=''>
-
+                <tbody className='[&_tr:last-child]:border-0'>
+                    <tr className='border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'>
+                        <td className={tableDataClass}>1</td>
+                        <td className={tableDataClass}>DELL</td>
+                        <td className={tableDataClass}>Optiplex 3080</td>
+                        <td className={tableDataClass}>N012345</td>
+                        <td className={tableDataClass}>PE06S67S</td>
+                        <td className={tableDataClass}>DTPE06S67S</td>
+                        <td className={tableDataClass}>-</td>
+                        <td className={tableDataClass}>
+                            <BsThreeDotsVertical />
+                        </td>
+                    </tr>
+                    <tr className='border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted'>
+                        <td className={tableDataClass}>1</td>
+                        <td className={tableDataClass}>DELL</td>
+                        <td className={tableDataClass}>Optiplex 3080</td>
+                        <td className={tableDataClass}>N012345</td>
+                        <td className={tableDataClass}>PE06S67S</td>
+                        <td className={tableDataClass}>DTPE06S67S</td>
+                        <td className={tableDataClass}>-</td>
+                        <td className={tableDataClass}>
+                            <BsThreeDotsVertical />
+                        </td>
+                    </tr>
                 </tbody>
-                <tr className=''>
-                    <td className='tableDataClass'>1</td>
-                    <td className='tableDataClass'>DELL</td>
-                    <td className='tableDataClass'>Optiplex 3080</td>
-                    <td className='tableDataClass'>N012345</td>
-                    <td className='tableDataClass'>PE06S67S</td>
-                    <td className='tableDataClass'>DTPE06S67S</td>
-                    <td className='tableDataClass'>-</td>
-                    <td className='tableDataClass'>
-                        <BsThreeDotsVertical />
-                    </td>
-                </tr>
             </table>
         </div>
     )
