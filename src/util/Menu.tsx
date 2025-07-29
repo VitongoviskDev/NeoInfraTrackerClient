@@ -95,4 +95,5 @@ const SideMenuData: MenuDTO[] = [
     }
 ]
 
+
 export default SideMenuData;

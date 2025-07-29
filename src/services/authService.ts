@@ -8,7 +8,11 @@ export const loginUser = async (userData: LoginPayloadDTO): Promise<LoginRespons
             name: 'Vitor Campos',
             email: userData.login,
             roles: ['ROLE_ADMIN'],
-            profileImage: ''
+            profileImage: '',
+            site: {
+                name: "Mogi das Cruzes",
+                abreviation: "MGC"
+            }
         },
         token: 'senha:' + userData.password
     }
@@ -23,7 +27,11 @@ export const registerUser = async (userData: RegisterPayload): Promise<Resgister
             name: 'Vitor Campos',
             email: userData.login,
             roles: ['ROLE_ADMIN'],
-            profileImage: ''
+            profileImage: '',
+            site: {
+                name: "Mogi das Cruzes",
+                abreviation: "MGC"
+            }
         },
         token: 'senha:' + userData.password
     }

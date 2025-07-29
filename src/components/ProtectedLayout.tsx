@@ -10,7 +10,7 @@ const ProtectedLayout: React.FC = () => {
     return !user ? (
         <Navigate to={"/login"} />
     ) : (
-        <div className='flex'>
+        <div className='grid grid-cols-[auto_1fr]'>
             <SideMenu />
             <Outlet />
         </div>

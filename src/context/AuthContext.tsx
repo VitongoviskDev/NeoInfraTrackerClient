@@ -2,7 +2,7 @@ import { createContext, useState, useEffect, type ReactNode } from 'react';
 
 import { loginUser, registerUser } from '../services/authService';
 import type { LoginPayloadDTO, RegisterPayload } from '../dto/authentication';
-import type UserDTO from '../dto/user';
+import type UserDTO from '../dto/userDTO';
 
 
 interface AuthContextType {

@@ -1,4 +1,4 @@
-import type UserDTO from "./user";
+import type UserDTO from "./userDTO";
 
 export interface LoginPayloadDTO {
   login: string;
