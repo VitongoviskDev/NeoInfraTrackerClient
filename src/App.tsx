@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import ProtectedLayout from "./components/ProtectedLayout"
 import LoginPage from "./page/LoginPage"
 import MachinesPage from "./page/MachinesPage"
+import BaseSghPage from "./page/BaseSghPage"
 
 const App: React.FC = () => {
   return (
@@ -13,11 +14,13 @@ const App: React.FC = () => {
           <Route path='/machines' element={<MachinesPage />} />
           <Route path='/mapping' element={<>MAPPING</>} />
           <Route path='/movements' element={<>MOVEMENTS</>} />
+          <Route path='/validator' element={<>VALIDATOR</>} />
+          <Route path='/mover' element={<>MOVER</>} />
           <Route path='/formatter' element={<>FORMATTER</>} />
           <Route path='/indicators' element={<>INDICATORS</>} />
           <Route path='/lung' element={<>LUNG</>} />
           <Route path='/inventory' element={<>INVENTORY</>} />
-          <Route path='/basesgh' element={<>BASESGH</>} />
+          <Route path='/basesgh' element={<BaseSghPage/>} />
           <Route path='/basekaspesky' element={<>BASEKASPERSKY</>} />
           <Route path='/demands' element={<>DEMANDS</>} />
           <Route path='/switchvlan' element={<>SWITCHVLAN</>} />

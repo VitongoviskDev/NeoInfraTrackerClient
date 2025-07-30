@@ -7,7 +7,10 @@ import { IoMdAdd } from 'react-icons/io'
 import SecondaryButton from '../components/Input/SecondaryButton'
 import { MdOutlineFileDownload } from 'react-icons/md'
 import { useAuth } from '../hooks/useAuth'
-import StorageTable from '../components/tables/StorageTable'
+import InventoryTable from '../components/tables/InventoryTable'
+import StorageTableContainer from '../components/tables/StorageTableContainer'
+import MaintenanceTableContainer from '../components/tables/MaintenanceTableContainer'
+import ProductionTableContainer from '../components/tables/ProductionTableContainer'
 
 const MachinesPage: React.FC = () => {
   const { user } = useAuth();
@@ -29,7 +32,7 @@ const MachinesPage: React.FC = () => {
       <main className='mt-8'>
         {/* FILTERS */}
         <section className=''>
-          <SearchBox placeholder='Seral, Ativo, Hostname, Modelo etc.' />
+          <SearchBox placeholder='Local, Pa, Serial, Ativo, Hostname, Modelo etc.' />
         </section>
         {/* DADOS */}
         <section className='mt-8'>
@@ -37,20 +40,20 @@ const MachinesPage: React.FC = () => {
           <div className='mt-2'>
             {
               storageLocal === 'Produção' ? (
-                <>Produção</>
+                <ProductionTableContainer/>
               ) :
-                storageLocal === 'Estoque' ? (
-                  <StorageTable />
-                ) :
-                  storageLocal === 'Manutenção' ? (
-                    <>Manutenção</>
-                  ) :
-                    storageLocal === 'Bancada' ? (
-                      <>Bancada</>
-                    ) :
-                      (
-                        <>Descarte</>
-                      )
+              storageLocal === 'Estoque' ? (
+                <StorageTableContainer />
+              ) :
+              storageLocal === 'Manutenção' ? (
+                <MaintenanceTableContainer />
+              ) :
+              storageLocal === 'Bancada' ? (
+                <>Bancada</>
+              ) :
+              (
+                <>Descarte</>
+              )
             }
           </div>
         </section>

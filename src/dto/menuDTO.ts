@@ -7,4 +7,5 @@ export interface MenuItemDTO {
 export interface MenuDTO {
     name: string;
     items: MenuItemDTO[];
+    role: string;
 }

@@ -10,8 +10,10 @@ const ProtectedLayout: React.FC = () => {
     return !user ? (
         <Navigate to={"/login"} />
     ) : (
-        <div className='grid grid-cols-[auto_1fr]'>
-            <SideMenu />
+        <div className='min-h-screen grid grid-cols-[17rem_1fr] w-sceen'>
+            <div className='relative'>
+                <SideMenu />
+            </div>
             <Outlet />
         </div>
     )

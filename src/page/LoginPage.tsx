@@ -23,11 +23,11 @@ const LoginPage = () => {
             <form action={handleLogin}>
                 <div>
                     <label htmlFor="login">Login:</label>
-                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className='rounded-sm ring ring-gray-400'/>
                 </div>
                 <div>
                     <label htmlFor="pass">Password:</label>
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='rounded-sm ring ring-gray-400'/>
                 </div>
                 <button type='submit'>
                     LOGIN
