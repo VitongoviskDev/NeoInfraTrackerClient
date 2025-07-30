@@ -1,7 +1,6 @@
 import { FaNetworkWired } from "react-icons/fa";
 import { FiDatabase, FiShield } from "react-icons/fi";
 import { HiMiniArrowsRightLeft } from "react-icons/hi2";
-import { IoIosSearch } from "react-icons/io";
 import { LuLayoutDashboard, LuMapPin } from "react-icons/lu";
 import { MdHeadsetMic, MdOutlineInventory2 } from "react-icons/md";
 import { RiComputerLine } from "react-icons/ri";

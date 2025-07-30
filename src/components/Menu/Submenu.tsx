@@ -5,11 +5,10 @@ import { IoIosArrowDown } from 'react-icons/io';
 
 interface SubmenuProps {
     open?: boolean;
-    setOpen?: (value: boolean) => void;
     menuDto: MenuDTO;
 }
 
-const Submenu: React.FC<SubmenuProps> = ({ open = true, setOpen, menuDto }) => {
+const Submenu: React.FC<SubmenuProps> = ({ open = true, menuDto }) => {
 
     const [shown, setShown] = useState<boolean>(open);
 

@@ -7,9 +7,12 @@ interface PrimaryButtonProps {
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({ text, icon, onClick }) => {
+    const handleButtonClick = () => {
+        onClick();
+    }
     return (
         <button
-            onClick={() => onclick}
+            onClick={handleButtonClick}
             className='flex items-center gap-2 px-4 py-2 text-gray-100 font-semibold bg-blue-400 rounded-md'>
             {icon}
             {text}
