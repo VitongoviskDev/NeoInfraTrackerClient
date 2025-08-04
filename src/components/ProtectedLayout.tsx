@@ -3,7 +3,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import SideMenu from './Menu/SideMenu';
 
-
 const ProtectedLayout: React.FC = () => {
     const { user } = useAuth();
 

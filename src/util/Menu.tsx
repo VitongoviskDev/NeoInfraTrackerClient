@@ -120,11 +120,11 @@ const SideMenuData: MenuDTO[] = [
         name: "Administrativo",
         items: [
             {
-                url: '/site',
+                url: '/admin/site',
                 label: "Site",
                 icon: <FiDatabase />
             }, {
-                url: '/team',
+                url: '/admin/team',
                 label: "Equipe",
                 icon: <FaNetworkWired />
             }

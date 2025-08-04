@@ -24,6 +24,8 @@ const App: React.FC = () => {
           <Route path='/basekaspesky' element={<>BASEKASPERSKY</>} />
           <Route path='/demands' element={<>DEMANDS</>} />
           <Route path='/switchvlan' element={<>SWITCHVLAN</>} />
+          <Route path='/admin/site' element={<>SITE</>} />
+          <Route path='/admin/team' element={<>TEAM</>} />
         </Route>
         <Route path="/*" element={<>NOT FOUND</>} />
       </Routes>
